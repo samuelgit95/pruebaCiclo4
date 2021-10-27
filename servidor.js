@@ -13,6 +13,26 @@ router.get('/',(req,res)=>{
     res.send("Prueba de get en la página");
 });
 
+//post para ingresar
+router.post('/Tarea',(req,res)=>{
+    let TareaNueva = new TareaSchema({
+        IdTarea:req.body.IdTarea,
+        NombreTarea:req.body.NombreTarea,
+        DetalleTarea:req.body.DetalleTarea
+    });
+    TareaNueva.save(function(err,datos){
+        if(err){
+            console.log("error");
+        }else{
+            res.send("Tarea Almacenada");
+        }
+    
+    });
+})
+
+
+
+
 aplicacion.use(express.urlencoded({extended:true}));
 aplicacion.use(express.json());
 aplicacion.use(router);

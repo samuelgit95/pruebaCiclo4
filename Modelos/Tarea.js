@@ -1,8 +1,8 @@
 const mongoose=require('mongoose');
 let TareaSchema=mongoose.Schema({
-    Id:Number,
-    Nombre:String,
-    Descripcion:String
+    IdTarea:Number,
+    NombreTarea:String,
+    DetalleTarea:String
 });
 
 //exponer
